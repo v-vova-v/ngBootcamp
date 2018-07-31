@@ -1,0 +1,217 @@
+$themMainColor: #4150d2;
+$themMainBoxShadow: rgba(0, 0, 0, 0.25);
+
+$desktopMenuWidth: 300px;
+$tabletMenuWidth: 99px;
+$mobileMenuWidth: 305px;
+$topPanelHeight: 70px;
+
+.main-container {
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.layout-container {
+  overflow: inherit;
+  width: 100%;
+  height: 100vh;
+}
+
+aside.left {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  float: left;
+  align-items: center;
+  background: linear-gradient(180deg, #033dd2 0%, #4458d2 100%), $themMainColor;
+  width: $desktopMenuWidth;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+    width: 100%;
+    height: 70px;
+    background: $themMainColor;
+    box-shadow: 3px 4px 4px $themMainBoxShadow;
+
+    .logo {
+      width: 119px;
+      height: 32px;
+    }
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px 0;
+    font-weight: 400;
+
+    a.menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #FFF;
+      margin-bottom: 20px;
+      border-left: 4px solid transparent;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 5px 20px;
+
+      &.active {
+        border-left: 4px solid #fff;
+      }
+
+      &:hover {
+        color: #FFFFFF;
+      }
+
+      i.fa {
+        font-size: 16px;
+        text-align: center;
+        min-width: 16px;
+        margin-right: 16px;
+      }
+    }
+
+    footer {
+      width: 100%;
+      bottom: 50px;
+    }
+  }
+
+  div.separator {
+    background: linear-gradient(90deg, #2F3640 0%, #4AB4F0 50%, #2F3640 99.9%), #4AC5E5;
+    box-shadow: 0px 4px 30px #1B262F;
+    height: 1px;
+    width: 152px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  //tablet styles
+  @media screen and (min-width:768px) and (max-width:992px) {
+    & {
+      width: $tabletMenuWidth;
+      nav {
+        a.menu-item {
+          padding: 5px 15px 5px 11px;
+          justify-content: center;
+          span {
+            display: flex;
+            flex-direction: column;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  //mobile styles
+  @media screen and (max-width:767px) {
+    & {
+      width: $mobileMenuWidth;
+      z-index: 10;
+      left: -$mobileMenuWidth;
+      -webkit-transition: left .4s;
+      -moz-transition: left .4s;
+      -ms-transition: left .4s;
+      -o-transition: left .4s;
+      transition: left .4s;
+
+      &.active {
+        left: 0;
+      }
+
+      header {
+        background: transparent;
+        box-shadow: none;
+
+        .chevron-left {
+          position: absolute;
+          right: 25px;
+          top: 26px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}
+
+div.right {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex: 1;
+  float: right;
+  height: 100vh;
+  flex-direction: column;
+  width: calc(100% - #{$desktopMenuWidth});
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 70px;
+
+    background: $themMainColor;
+    box-shadow: 3px 4px 4px $themMainBoxShadow;
+
+    h1.title {
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
+  main {
+    padding: 30px;
+    max-height: calc(100% - #{$topPanelHeight});
+    overflow: auto;
+  }
+
+  //tablet styles
+  @media screen and (min-width:768px) and (max-width:992px) {
+    & {
+      width: calc(100% - #{$tabletMenuWidth});
+    }
+  }
+
+  //mobile styles
+  @media screen and (max-width:767px) {
+    & {
+      width: 100%;
+      -webkit-transition: filter .5s;
+      -moz-transition: filter .5s;
+      -ms-transition: filter .5s;
+      -o-transition: filter .5s;
+      transition: filter .5s;
+
+      &.inactive {
+        filter: opacity(.3);
+      }
+
+      header {
+        justify-content: center;
+        button.bars {
+          position: absolute;
+          left: 10px;
+          background-color: transparent;
+          color: #fff;
+        }
+      }
+      main {
+        padding-top: 75px;
+      }
+    }
+  }
+}
+
