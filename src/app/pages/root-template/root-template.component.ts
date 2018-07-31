@@ -11,7 +11,6 @@ export class RootTemplateComponent implements OnInit {
   menuIsActive: boolean;
   menuItems = [
     {iconUrl: '/assets/images/coding.svg', caption: 'Dashboard', route: ['/dashboard']},
-    {iconUrl: '/assets/images/wallet.svg', caption: 'Wallet', route: ['/wallet']},
   ];
 
   constructor() { }
