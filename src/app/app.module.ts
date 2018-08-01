@@ -12,12 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './pages/auth/auth.module';
 import { RootTemplateComponent } from './pages/root-template/root-template.component';
 import {SignOutComponent} from "./pages/auth/sign-out/sign-out.component";
+import { DashboardComponent } from './pages/doctor/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RootTemplateComponent,
     SignOutComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

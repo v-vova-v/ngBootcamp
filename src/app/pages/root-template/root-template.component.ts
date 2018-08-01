@@ -10,7 +10,7 @@ export class RootTemplateComponent implements OnInit {
   title: string;
   menuIsActive: boolean;
   menuItems = [
-    {iconUrl: '/assets/images/coding.svg', caption: 'Dashboard', route: ['/dashboard']},
+    {caption: 'Dashboard', route: ['/doctor/dashboard']},
   ];
 
   constructor() { }
