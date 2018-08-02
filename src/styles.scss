@@ -1,0 +1,84 @@
+$mainColor: #4150d2;
+$gradientColor: #1194BE;
+$error-color: #EB5757;
+
+/* You can add global styles to this file, and also import other style files */
+body {
+
+}
+
+.page.wrapper {
+  margin: 0 0 50px 0;
+  color: $mainColor;
+  font-size: 14px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  clear: both;
+  .header {
+    width: 100%;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 40px solid;
+    img {
+      position: absolute;
+      left: 20px;
+      top: 17px;
+    }
+  }
+
+  .main-content {
+    padding: 20px;
+    input:not([type='button']).main-theme, select.main-theme {
+      color: $mainColor;
+      border: 1px solid $mainColor;
+    }
+
+    .has-error {
+      input:not([type='button']).main-theme, select.main-theme {
+        border-color: $error-color;
+      }
+
+      .form-error {
+        text-align: center;
+
+        span {
+          display: inline-block;
+          padding: 4px 20px 6px;
+          border-radius: 0 0 3px 3px;
+          background-color: $error-color;
+          color: #fff;
+          line-height: 14px;
+          position: relative;
+
+          &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-color: $error-color;
+            border-top-width: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
+          }
+        }
+      }
+    }
+
+    input[type='button'].main-theme {
+      color: #fff;
+      text-transform: uppercase;
+      width: 216px;
+      height: 50px;
+      background: linear-gradient(180deg, #83E2E7 0%, #6FCEE5 100%), $gradientColor;
+      border-radius: 100px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    select {
+      background-color: transparent;
+      height: 35px;
+    }
+  }
+}
